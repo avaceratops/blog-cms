@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import api from '../utils/api';
 
 const useBlogPosts = () => {
   const [data, setData] = useState([]);
@@ -8,12 +9,11 @@ const useBlogPosts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/posts');
-        if (!response.ok) {
+        const response = await api.get(`/posts`);
+        if (response.status !== 200) {
           throw new Error('server error');
         }
-        const data = await response.json();
-        setData(data);
+        setData(response.data);
       } catch (error) {
         setIsError(true);
       } finally {
