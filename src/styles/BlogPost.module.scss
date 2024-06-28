@@ -29,7 +29,8 @@ $pink-color: #f7a8b8;
 }
 
 .status--published,
-.status--unpublished {
+.status--unpublished,
+.status--hidden {
   @apply mt-4 w-fit rounded-xl border bg-neutral-900 px-2 py-0.5 text-sm;
 }
 
@@ -39,6 +40,10 @@ $pink-color: #f7a8b8;
 
 .status--unpublished {
   @apply border-yellow-300 text-yellow-300;
+}
+
+.status--hidden {
+  @apply border-red-500 text-red-500;
 }
 
 @media (max-width: 420px) {
