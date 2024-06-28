@@ -28,6 +28,19 @@ $pink-color: #f7a8b8;
   @apply mb-4 inline-block text-lg;
 }
 
+.status--published,
+.status--unpublished {
+  @apply mt-4 w-fit rounded-xl border bg-neutral-900 px-2 py-0.5 text-sm;
+}
+
+.status--published {
+  @apply border-green-500 text-green-500;
+}
+
+.status--unpublished {
+  @apply border-yellow-300 text-yellow-300;
+}
+
 @media (max-width: 420px) {
   .author {
     transform: unset;
