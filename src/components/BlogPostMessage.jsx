@@ -8,7 +8,7 @@ export default function BlogPostMessage({ id, message, excerpt }) {
       {excerpt ? createBlogExcerpt(message, 50) : message}{' '}
       {excerpt && (
         <Link to={`/post/${id}`}>
-          <span className={styles.expand}>...read more</span>
+          <span className={styles.expand}>...edit</span>
         </Link>
       )}
     </p>
