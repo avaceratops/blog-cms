@@ -16,6 +16,11 @@ export default function Post() {
     }
   }, [data]);
 
+  function removeComment(commentId) {
+    const updatedComments = comments.filter((comment) => comment._id !== commentId);
+    setComments(updatedComments);
+  }
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error loading post</div>;
 
@@ -25,7 +30,7 @@ export default function Post() {
     <>
       <GoBack />
       <BlogPost key={post._id} post={post} excerpt={false} />
-      <CommentSection comments={comments} />
+      <CommentSection postId={post._id} comments={comments} removeComment={removeComment} />
     </>
   );
 }
