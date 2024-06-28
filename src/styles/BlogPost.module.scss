@@ -28,6 +28,7 @@ $pink-color: #f7a8b8;
   @apply mb-4 inline-block text-lg;
 }
 
+.button--hide,
 .status--published,
 .status--unpublished,
 .status--hidden {
@@ -44,6 +45,10 @@ $pink-color: #f7a8b8;
 
 .status--hidden {
   @apply border-red-500 text-red-500;
+}
+
+.button--hide {
+  @apply border-neutral-400 text-neutral-400;
 }
 
 @media (max-width: 420px) {
