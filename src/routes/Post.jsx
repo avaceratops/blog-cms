@@ -16,6 +16,11 @@ export default function Post() {
     }
   }, [data]);
 
+  function addComment(comment) {
+    const newComments = [comment, ...comments];
+    setComments(newComments);
+  }
+
   function removeComment(commentId) {
     const updatedComments = comments.filter((comment) => comment._id !== commentId);
     setComments(updatedComments);
@@ -30,7 +35,12 @@ export default function Post() {
     <>
       <GoBack />
       <BlogPost key={post._id} post={post} excerpt={false} />
-      <CommentSection postId={post._id} comments={comments} removeComment={removeComment} />
+      <CommentSection
+        postId={post._id}
+        comments={comments}
+        addComment={addComment}
+        removeComment={removeComment}
+      />
     </>
   );
 }
