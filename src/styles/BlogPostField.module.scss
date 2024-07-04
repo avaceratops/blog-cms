@@ -1,0 +1,12 @@
+.input,
+.textarea {
+  @apply mt-0.5 block w-full rounded bg-neutral-700 p-2 px-2 py-1.5 font-normal;
+
+  &[type='datetime-local'] {
+    @apply w-fit;
+  }
+}
+
+.textarea {
+  @apply resize-none;
+}
