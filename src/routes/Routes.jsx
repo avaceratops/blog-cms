@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import LoginForm from '../components/LoginForm';
 import PageNotFound from '../components/PageNotFound';
+import CreatePost from './CreatePost';
 import Post from './Post';
 import Posts from './Posts';
 import ProtectedRoute from './ProtectedRoute';
@@ -31,6 +32,10 @@ export default function Routes() {
         {
           path: '/',
           element: <Posts />,
+        },
+        {
+          path: '/post/new',
+          element: <CreatePost />,
         },
         {
           path: '/post/:postId',
